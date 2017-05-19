@@ -1,12 +1,16 @@
 const buble = require('buble')
+const fs = require('fs')
+const path = require('path')
 
-function createProcess (bubleOptions) {
-  return function process (src) {
-    return buble.transform(src, bubleOptions).code
+let options = {}
+
+try {
+  const configLoc = path.resolve(process.cwd(), '.bublerc')
+  options = JSON.parse(fs.readFileSync(configLoc))
+} catch (e) {}
+
+module.exports = {
+  process: function process (src) {
+    return buble.transform(src, options).code
   }
 }
-
-module.exports = function create (bubleOptions) {
-  return { process: createProcess(bubleOptions) }
-}
-module.exports.process = createProcess()

@@ -17,23 +17,11 @@ In your package.json:
 
 ### Configuring buble
 
-Jest doesn't support passing in options to transformers, so you can initialise `jest-buble` in another file first:
-
-```js
-// jest.transform.js
-const createTransformer = require('jest-buble')
-
-module.exports = createTransformer({
-  objectAssign: 'Object.assign'
-})
-```
-
-then for the jest config:
+Jest doesn't support passing in options to transformers through their config, so you can define a `.bublerc` JSON file with your buble options:
 
 ```json
-  "jest": {
-    "transform": {
-      "^.+\\.js$": "./jest.transform.js"
-    }
-  }
+// .bublerc
+{
+  "objectAssign": "Object.assign"
+}
 ```
