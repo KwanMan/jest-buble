@@ -1,0 +1,11 @@
+{
+  "name": "jest-buble",
+  "version": "1.0.0",
+  "description": "Jest plugin to use buble for transformation.",
+  "main": "index.js",
+  "author": "Tommy Kwan",
+  "license": "ISC",
+  "peerDependencies": {
+    "buble": "^0.15.2"
+  }
+}
