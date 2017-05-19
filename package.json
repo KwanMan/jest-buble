@@ -4,7 +4,11 @@
   "description": "Jest plugin to use buble for transformation.",
   "main": "index.js",
   "author": "Tommy Kwan",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KwanMan/jest-buble.git"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "buble": "^0.15.2"
   }
